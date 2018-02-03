@@ -1,0 +1,30 @@
+import random
+number = random.randint(1, 10)
+tries = 1
+
+uname = input("Hello, What is your username?")
+print("Sup", uname + ".", )
+
+question = input("would you like to play a game? [Y/N]")
+if question =="n":
+    print("well okay then...maybe some other time")
+
+if question == "y":
+    print("Pick a number from 1 & 10")
+guess = int(input("Guess then: "))
+if guess > number:
+        print("Lower")
+if guess < number:
+        print("Higher")
+
+while guess != number:
+            tries += 1
+            guess = int(input("Try again: "))
+            if guess < number:
+                print("Higher")
+            if guess > number:
+                print("Lower")
+
+if guess == number:
+            print("Correct! The number ", number, \
+                  "and it took you only", tries, "tries")
